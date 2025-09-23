@@ -1,3 +1,8 @@
+import numpy as np
+
+def sigmoid(u):
+    return 1 / (1 + np.exp(-u))
+
 def step(u):
     return 1 if u >= 0 else 0
 
@@ -15,6 +20,11 @@ y = u
 # пороговая функция
 y_step = step(u)
 
+#сигмоида
+y_sigmoid = sigmoid(u)
+
 print("Взвешенная сумма u =", u)
 print("Выход нейрона y =", y)
 print("Выход нейрона (пороговая функция):", y_step)
+
+print("Выход нейрона (сигмоида):", y_sigmoid)
